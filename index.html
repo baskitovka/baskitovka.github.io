@@ -21,7 +21,7 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #faf5f0; /* Базовый фон */
+            background: #faf5f0;
             color: #5a4a42;
             line-height: 1.6;
             overflow-x: hidden;
@@ -62,9 +62,9 @@
         /* --- Шапка (Hero) --- */
         .hero {
             height: 90vh;
-            min-height: 600px;
-            background: linear-gradient(rgba(250, 245, 240, 0.3), rgba(192, 154, 132, 0.2)), url('foto2.jpg');
-            background-size: cover;
+            min-height: 500px;
+            background: linear-gradient(rgba(250, 245, 240, 0.3), rgba(192, 154, 132, 0.2));
+            background-size: contain;
             background-position: center 30%;
             display: flex;
             align-items: center;
@@ -125,13 +125,14 @@
 
         /* Разные фоны для каждой секции */
         .section:nth-of-type(1) { background: #faf5f0; }  /* Шампань */
-        .section:nth-of-type(2) { background: #fff5f0; }  /* Нежный персик */
-        .section:nth-of-type(3) { background: #fceae5; }  /* Нежный розовый */
-        .section:nth-of-type(4) { background: #fff0f5; }  /* Лавандовый */
+        .section:nth-of-type(2) { background: #e0cec5; }  /* Нежный персик */
+        .section:nth-of-type(3) { background: #ffedf8; }  /* Нежный розовый */
+        .section:nth-of-type(4) { background: #ffdae6; }  /* Лавандовый */
         .section:nth-of-type(5) { background: #fdf5e6; }  /* Ваниль */
         .section:nth-of-type(6) { background: #f5f0f0; }  /* Жемчужный */
         .section:nth-of-type(7) { background: #faf0e6; }  /* Слоновая кость */
-        .section:nth-of-type(8) { background: #fff5f5; }  /* Розовый туман */
+        .section:nth-of-type(8) { background: #ffe5e5; }  /* Розовый туман */
+        .section:nth-of-type(9) { background: #ffedf8; }  /* Нежный розовый для формы */
 
         .section::after {
             content: '❀ ❁ ❀ ❁ ❀';
@@ -291,26 +292,109 @@
             border-radius: 50%;
             margin-bottom: 15px;
             border: 4px solid white;
-            box-shadow: 0 10px 25px rgba(192, 154, 132, 0.3);
+            box-shadow: 0 10px 25px rgba(221, 175, 213, 0.3);
             transition: all 0.3s ease;
         }
 
         .color-item span {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #5a4a42;
             font-weight: 500;
+            display: block;
+            margin-top: 5px;
         }
 
         .dresscode-note {
             font-size: 1.2rem;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgb(255, 255, 255);
             padding: 25px 40px;
             border-radius: 60px;
             margin: 30px auto;
             max-width: 700px;
             color: #5a4a42;
-            box-shadow: 0 5px 20px rgba(192, 154, 132, 0.15);
-            border: 1px solid #c09a84;
+            box-shadow: 0 5px 20px rgba(221, 175, 213, 0.3);
+            border: 1px solid #ddafd5;
+        }
+
+        /* --- Форма подтверждения --- */
+        .rsvp-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 50px;
+            box-shadow: 0 15px 35px rgba(221, 175, 213, 0.2);
+            border: 2px solid #ddafd5;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #5a4a42;
+            font-size: 1.1rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #fceae5;
+            border-radius: 50px;
+            font-size: 1rem;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #ddafd5;
+            box-shadow: 0 0 0 3px rgba(221, 175, 213, 0.2);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .radio-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #ddafd5;
+        }
+
+        .form-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ddafd5 0%, #c09a84 100%);
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 500;
+            padding: 15px 50px;
+            border-radius: 70px;
+            text-decoration: none;
+            letter-spacing: 2px;
+            box-shadow: 0 20px 40px rgba(221, 175, 213, 0.4);
+            transition: all 0.3s ease;
+            border: 2px solid white;
+            margin: 20px 0;
+            cursor: pointer;
+            border: none;
+        }
+
+        .form-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 25px 50px rgba(221, 175, 213, 0.5);
         }
 
         /* --- Расписание --- */
@@ -406,28 +490,6 @@
             transform: scale(1.1);
         }
 
-        /* --- Кнопка --- */
-        .form-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #c09a84 0%, #a57c6b 100%);
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 500;
-            padding: 20px 70px;
-            border-radius: 70px;
-            text-decoration: none;
-            letter-spacing: 2px;
-            box-shadow: 0 20px 40px rgba(192, 154, 132, 0.4);
-            transition: all 0.3s ease;
-            border: 3px solid white;
-            margin: 30px 0;
-        }
-
-        .form-button:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(192, 154, 132, 0.5);
-        }
-
         footer {
             text-align: center;
             padding: 50px;
@@ -459,9 +521,9 @@
                 text-align: center;
             }
             
-            .form-button {
-                font-size: 1.2rem;
-                padding: 15px 40px;
+            .radio-group {
+                flex-direction: column;
+                gap: 15px;
             }
         }
     </style>
@@ -472,7 +534,7 @@
     <div class="hearts" id="hearts"></div>
 
     <!-- ШАПКА -->
-    <div class="hero" style="background-image: linear-gradient(rgba(250, 245, 240, 0.3), rgba(192, 154, 132, 0.2)), url('foto2.jpg');">
+    <div class="hero" style="background-image: linear-gradient(rgba(240, 250, 250, 0.3));">
         <div class="hero-content fade-in">
             <h1>ИВАН & ДАРЬЯ</h1>
             <div class="date">18.09.2026</div>
@@ -481,7 +543,7 @@
 
     <div class="container">
 
-        <!-- ПРИВЕТСТВИЕ (фон #faf5f0 - Шампань) -->
+        <!-- ПРИВЕТСТВИЕ -->
         <section class="section fade-in">
             <h2>Дорогие наши!</h2>
             <p style="font-size: 1.4rem; max-width: 700px; margin: 20px auto; color: #6b4f42; line-height: 1.8;">
@@ -490,7 +552,7 @@
             </p>
         </section>
 
-        <!-- КАРУСЕЛЬ ФОТОГРАФИЙ (фон #fff5f0 - Нежный персик) -->
+        <!-- КАРУСЕЛЬ ФОТОГРАФИЙ -->
         <section class="section fade-in">
             <h2>Наша история</h2>
             <p style="margin-bottom: 20px; font-size: 1.2rem;">Листайте наши счастливые моменты ❤️</p>
@@ -511,7 +573,7 @@
             </div>
         </section>
 
-        <!-- ТАЙМЕР (фон #fceae5 - Нежный розовый) -->
+        <!-- ТАЙМЕР -->
         <section class="section fade-in">
             <h2>До нашей свадьбы</h2>
             <div class="countdown" id="countdown">
@@ -522,18 +584,18 @@
             </div>
         </section>
 
-        <!-- РАСПИСАНИЕ ДНЯ (фон #fff0f5 - Лавандовый) -->
+        <!-- РАСПИСАНИЕ ДНЯ -->
         <section class="section fade-in">
             <h2>Программа дня</h2>
             <div class="schedule-grid">
-                <div class="schedule-item"><span class="schedule-time">17:00</span><span class="schedule-event">Сбор гостей</span></div>
-                <div class="schedule-item"><span class="schedule-time">17:30</span><span class="schedule-event">Церемония регистрации</span></div>
-                <div class="schedule-item"><span class="schedule-time">18:00</span><span class="schedule-event">Фотосессия с гостями</span></div>
-                <div class="schedule-item"><span class="schedule-time">19:30</span><span class="schedule-event">Свадебный банкет</span></div>
+                <div class="schedule-item"><span class="schedule-time">12:00</span><span class="schedule-event">Регистрация</span></div>
+                <div class="schedule-item"><span class="schedule-time">13:00</span><span class="schedule-event">Фотосессия гостей</span></div>
+                <div class="schedule-item"><span class="schedule-time">16:00</span><span class="schedule-event">Сбор гостей</span></div>
+                <div class="schedule-item"><span class="schedule-time">16:30</span><span class="schedule-event">Свадебный банкет</span></div>
             </div>
         </section>
 
-        <!-- ДАТА В КАЛЕНДАРЕ (фон #fdf5e6 - Ваниль) -->
+        <!-- ДАТА В КАЛЕНДАРЕ -->
         <section class="section fade-in">
             <h2>18 сентября 2026</h2>
             <div class="calendar">
@@ -551,15 +613,15 @@
             </div>
         </section>
 
-        <!-- ДРЕСС-КОД (фон #f5f0f0 - Жемчужный) -->
+        <!-- ДРЕСС-КОД -->
         <section class="section fade-in">
             <h2>Дресс-код</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">Мы будем рады видеть вас в оттенках нашей свадьбы ❤️</p>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">Мы будем рады, если своими нарядами вы поддержите цветовую гамму дня.</p>
             
             <div class="color-palette">
                 <div class="color-item">
-                    <div class="color-circle" style="background: #faf5f0; border: 3px solid #c09a84;"></div>
-                    <span>Шампань</span>
+                    <div class="color-circle" style="background: #ffdae6;"></div>
+                    <span>Нежно-розовый</span>
                 </div>
                 <div class="color-item">
                     <div class="color-circle" style="background: #c09a84;"></div>
@@ -567,26 +629,62 @@
                 </div>
                 <div class="color-item">
                     <div class="color-circle" style="background: #a57c6b;"></div>
-                    <span>Теплый беж</span>
+                    <span>Тёплый беж</span>
                 </div>
                 <div class="color-item">
-                    <div class="color-circle" style="background: #fceae5;"></div>
-                    <span>Нежный розовый</span>
-                </div>
-                <div class="color-item">
-                    <div class="color-circle" style="background: #fff5f0;"></div>
-                    <span>Персиковый</span>
+                    <div class="color-circle" style="background: #faf5f0; border: 2px solid #ddafd5;"></div>
+                    <span>Шампань</span>
                 </div>
             </div>
             
             <div class="dresscode-note">
-                <i class="fas fa-leaf" style="color: #c09a84; margin-right: 10px;"></i>
-                Приветствуются пастельные тона, цветочные принты и элегантность
-                <i class="fas fa-leaf" style="color: #c09a84; margin-left: 10px;"></i>
+                <i class="fas fa-leaf" style="color: #ddafd5; margin-right: 10px;"></i>
+                Для дам — пастельные тона, для мужчин — классические тёмные оттенки
+                <i class="fas fa-leaf" style="color: #ddafd5; margin-left: 10px;"></i>
             </div>
         </section>
 
-        <!-- ПОДАРКИ (фон #faf0e6 - Слоновая кость) -->
+ <!-- ПОДТВЕРЖДЕНИЕ ПРИСУТСТВИЯ -->
+<section class="section fade-in">
+    <h2>Подтвердите присутствие</h2>
+    <p style="font-size: 1.2rem; margin-bottom: 30px;">Пожалуйста, заполните форму, чтобы мы знали, кого ждать ❤️</p>
+    
+    <form class="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSd22VnTpybyIZjKuPFOjZhGhlWcLO9_7fKyPU12bhPl8EY9bA/formResponse" method="POST" target="hidden-iframe">
+        <div class="form-group">
+            <label>Ваше имя и фамилия</label>
+            <input type="text" name="entry.401997907" placeholder="Например: Анна Иванова" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Будете ли вы?</label>
+            <div class="radio-group">
+                <label class="radio-option">
+                    <input type="radio" name="entry.260066902" value="да" required>
+                    <span>Да, с радостью! ❤️</span>
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="entry.260066902" value="нет">
+                    <span>Нет, не смогу</span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Количество гостей</label>
+            <input type="number" name="entry.572486978" min="1" max="5" value="1" required>
+        </div>
+        
+        <button type="submit" class="form-button">Отправить</button>
+    </form>
+    
+    <!-- Невидимый iframe, чтобы не уходить со страницы -->
+    <iframe name="hidden-iframe" style="display:none;"></iframe>
+    
+    <p style="font-size: 0.9rem; margin-top: 20px; color: #a57c6b;">
+        ✨ Спасибо! Мы получим ваш ответ
+    </p>
+</section>
+        <!-- ПОДАРКИ -->
         <section class="section fade-in">
             <h2>Для нас</h2>
             <p style="font-size: 1.3rem; max-width: 600px; margin: 20px auto; line-height: 1.8;">
@@ -595,16 +693,12 @@
             </p>
         </section>
 
-        <!-- КОНТАКТЫ И ПОДТВЕРЖДЕНИЕ (фон #fff5f5 - Розовый туман) -->
+        <!-- КОНТАКТЫ -->
         <section class="section fade-in">
             <h2>Ждём вас</h2>
             <p style="font-size: 1.4rem; margin-bottom: 20px;">
-                📍 Ресторан "..." (добавьте адрес)
+                📍 Ресторан "..."
             </p>
-            <p style="font-size: 1.3rem; margin-bottom: 30px;">
-                Пожалуйста, подтвердите своё присутствие
-            </p>
-            <a href="#" class="form-button">Подтвердить</a>
         </section>
 
     </div>
